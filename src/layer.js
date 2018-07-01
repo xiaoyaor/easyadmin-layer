@@ -83,7 +83,7 @@ var layer = {
   path: ready.getPath,
   config: function(options, fn){
     options = options || {};
-    layer.cache = ready.config = $.extend({}, ready.config, options);
+    cache = layer.cache = ready.config = $.extend({}, ready.config, options);
     layer.path = ready.config.path || layer.path;
     typeof options.extend === 'string' && (options.extend = [options.extend]);
     
@@ -150,7 +150,7 @@ var layer = {
       anim: anim
     } : function(){
        options = options || {};
-       if(options.icon === -1 || options.icon === undefined && !ready.config.skin){
+       if(options.icon === -1 || options.icon === undefined){
          options.skin = skin + ' ' + (options.skin||'layui-layer-hui');
        }
        return options;
